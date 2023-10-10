@@ -11,7 +11,7 @@ import (
 )
 
 func fetchDevices() ([]string, error) {
-        devices, err := onvif.StartDiscovery(100*time.Millisecond)
+        devices, err := onvif.StartDiscovery(500*time.Millisecond)
         if err != nil {
                 return nil, err
         }
