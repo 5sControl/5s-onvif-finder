@@ -10,6 +10,11 @@ The platform generates detailed reports to provide insights on how processes can
 
 Plug-in your ML-algorithms or some of the Official 5s algorithms and get a ready-to-use software for manufacturing monitoring.
 
+# Docs
+
+The service by default starts on port `7654` and has one endpoint `/get_all_onvif_cameras/`, which scans the local network where the service is located and gets all cameras with onvif protocol support.
+The response will come back with a list of strings, where the strings will be the ip of the cameras.
+
 # **Project repositories**
 
 The connections between the project repositories are illustrated by the following diagram. 
