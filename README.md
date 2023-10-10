@@ -10,10 +10,17 @@ The platform generates detailed reports to provide insights on how processes can
 
 Plug-in your ML-algorithms or some of the Official 5s algorithms and get a ready-to-use software for manufacturing monitoring.
 
-# Docs
+
+# **Documentation**
 
 The service by default starts on port `7654` and has one endpoint `/get_all_onvif_cameras/`, which scans the local network where the service is located and gets all cameras with onvif protocol support.
 The response will come back with a list of strings, where the strings will be the ip of the cameras.
+
+[User Documentation](https://github.com/5sControl/Manufacturing-Automatization-Enterprise/wiki)
+
+[Installation Guide Pt.1](https://5controls.com/blog/installing-5s-control-software)
+
+[Installation Guide Pt.2](https://5controls.com/blog/installing-5s-control-software-part-2-docker)
 
 # **Project repositories**
 
@@ -41,15 +48,6 @@ The connections between the project repositories are illustrated by the followin
 
 **Algorithms Servers:**
 1. [inference-server-js](https://github.com/5sControl/inference-server-js)
-
-# **Documentation**
-
-[User Documentation](https://github.com/5sControl/Manufacturing-Automatization-Enterprise/wiki)
-
-[Installation Guide Pt.1](https://5controls.com/blog/installing-5s-control-software)
-
-[Installation Guide Pt.2](https://5controls.com/blog/installing-5s-control-software-part-2-docker)
-
 
 # **Contributing**
 Thank you for considering contributing to 5controlS. We truly believe that we can build an outstanding product together!
