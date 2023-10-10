@@ -27,25 +27,12 @@ func fetchDevices() ([]string, error) {
         return ipAddresses, nil
 }
 
-func getLastCameraIP(ipAddresses []string) []string {
-        serverIP := os.Getenv("IP")
-        extraIP_1 := "10.20.100.40"
-        extraIP_2 := "10.20.100.41"
-        if serverIP != "" {
-                ipAddresses = append(ipAddresses, serverIP)
-        }
-        ipAddresses = append(ipAddresses, extraIP_1)
-        ipAddresses = append(ipAddresses, extraIP_2)
-        return ipAddresses
-}
-
 func handleGetAllOnvifCameras(w http.ResponseWriter, r *http.Request) {
         ipAddresses, err := fetchDevices()
         if err != nil {
                 fmt.Println("Error: ", err)
                 return
         }
-        ipAddresses = getLastCameraIP(ipAddresses)
 
         json.NewEncoder(w).Encode(ipAddresses)
 }
