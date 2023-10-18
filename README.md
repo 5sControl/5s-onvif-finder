@@ -16,6 +16,8 @@ Plug-in your ML-algorithms or some of the Official 5s algorithms and get a ready
 The service by default starts on port `7654` and has one endpoint `/get_all_onvif_cameras/`, which scans the local network where the service is located and gets all cameras with onvif protocol support.
 The response will come back with a list of strings, where the strings will be the ip of the cameras.
 
+[Documentation for Developers](https://github.com/5sControl/5s-dev-documentation/wiki)
+
 [User Documentation](https://github.com/5sControl/Manufacturing-Automatization-Enterprise/wiki)
 
 [Installation Guide Pt.1](https://5controls.com/blog/installing-5s-control-software)
@@ -34,12 +36,13 @@ The connections between the project repositories are illustrated by the followin
 
 
 **5controlS Platform:**
-1. [5s-backend](https://github.com/5sControl/5s-backend)
-2. [5s-frontend](https://github.com/5sControl/5s-frontend)
-3. [5s-algorithms-controller](https://github.com/5sControl/5s-algorithms-controller)
-4. [5s-onvif](https://github.com/5sControl/5s-onvif)
-5. [5s-onvif-finder](https://github.com/5sControl/5s-onvif-finder)
-
+1. [5s-webserver](https://github.com/5sControl/5s-webserver)
+2. [5s-backend](https://github.com/5sControl/5s-backend)
+3. [5s-frontend](https://github.com/5sControl/5s-frontend)
+4. [5s-algorithms-controller](https://github.com/5sControl/5s-algorithms-controller)
+5. [5s-onvif](https://github.com/5sControl/5s-onvif)
+6. [5s-onvif-finder](https://github.com/5sControl/5s-onvif-finder)
+ 
 **Official Algorithms:**
 1. [min-max](https://github.com/5sControl/min-max)
 2. [idle-control](https://github.com/5sControl/idle-control)
