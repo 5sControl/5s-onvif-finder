@@ -32,7 +32,7 @@ type statusRecorder struct {
 
 func checkRTSP(ip string) bool {
 	address := fmt.Sprintf("%s:%d", ip, rtspPort)
-	conn, err := net.DialTimeout("tcp", address, 2*time.Second)
+	conn, err := net.DialTimeout("tcp", address, 100*time.Millisecond)
 	if err != nil {
 		return false
 	}
