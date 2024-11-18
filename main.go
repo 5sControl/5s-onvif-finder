@@ -137,7 +137,7 @@ func handleGetAllRTSPDevices(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	fmt.Println("Starting server on :7654...")
-	http.HandleFunc("/get_all_onvif_cameras/", logRequest(handleGetAllRTSPDevices))
+	http.HandleFunc("/get_all_rtsp_cameras/", logRequest(handleGetAllRTSPDevices))
 
 	if err := http.ListenAndServe(":7654", nil); err != nil {
 		log.Fatalf("Error starting server: %v", err)
