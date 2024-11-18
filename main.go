@@ -99,6 +99,10 @@ func getLocalNetworks() ([]*net.IPNet, error) {
 
 		for _, addr := range addrs {
 			if ipNet, ok := addr.(*net.IPNet); ok && ipNet.IP.To4() != nil {
+				if ipNet.IP[0] == 172 {
+					log.Printf("Excluding network: Interface=%s IP=%s Network=%s", iface.Name, ipNet.IP, ipNet)
+					continue
+				}
 				networks = append(networks, ipNet)
 				log.Printf("Found network: Interface=%s IP=%s Network=%s", iface.Name, ipNet.IP, ipNet)
 			}
