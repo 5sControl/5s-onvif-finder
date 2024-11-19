@@ -32,7 +32,7 @@ type statusRecorder struct {
 
 func checkRTSP(ip string) bool {
 	address := fmt.Sprintf("%s:%d", ip, rtspPort)
-	conn, err := net.DialTimeout("tcp", address, 100*time.Millisecond)
+	conn, err := net.DialTimeout("tcp", address, 50*time.Millisecond)
 	if err != nil {
 		return false
 	}
@@ -61,11 +61,14 @@ func scanIPs(ips []string) []string {
 	var wg sync.WaitGroup
 	var mu sync.Mutex
 	var devices []string
+	sem := make(chan struct{}, 100)
 
 	for _, ip := range ips {
 		wg.Add(1)
+		sem <- struct{}{}
 		go func(ip string) {
 			defer wg.Done()
+			defer func() { <-sem }()
 			if checkRTSP(ip) {
 				mu.Lock()
 				devices = append(devices, ip)
@@ -143,3 +146,4 @@ func main() {
 		log.Fatalf("Error starting server: %v", err)
 	}
 }
+
